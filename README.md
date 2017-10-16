@@ -20,7 +20,7 @@ The Student record is of the form <Student, Name, Department_ID>
 The Department record is of the form <Department, Department_ID, Department_Name>
 Output of your algorithm:
 
-1123, Joe, CSE/n
+1123, Joe, CSE
 1234, Bob, CS
 1234, Alice, CS
 
