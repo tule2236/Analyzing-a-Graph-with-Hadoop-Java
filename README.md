@@ -30,6 +30,7 @@ Department_Name> . For example, Joe’s student record Student, Joe, 1123 should
 with Department, 1123, CSE , producing the output record 1123, Joe, CSE .
 
 APPROACH
+
 Mapper
 The mapper read in our data, extract the common key of both data types which is “Department_ID”. The one-to-one join that equal keys with same values are sent to the same reducer. Then, it remove the join key “Department_ID” from the list and re-join the data back into a single String and set the join key back in, join order and the remaining data. Now, our data structure would look like (Department_ID, [Student, Student_name], [Deparment, Department_name]).
 Input: as example
