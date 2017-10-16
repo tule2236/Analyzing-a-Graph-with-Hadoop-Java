@@ -32,13 +32,28 @@ with Department, 1123, CSE , producing the output record 1123, Joe, CSE .
 APPROACH
 
 Mapper
+
 The mapper read in our data, extract the common key of both data types which is “Department_ID”. The one-to-one join that equal keys with same values are sent to the same reducer. Then, it remove the join key “Department_ID” from the list and re-join the data back into a single String and set the join key back in, join order and the remaining data. Now, our data structure would look like (Department_ID, [Student, Student_name], [Deparment, Department_name]).
+
 Input: as example
+
 Our first sort with TaggedKey class “Department_ID” is sorted, we have (1234, [Student, Alice], [Student, Bob] ,[Department, CS]), (1123, [Student, Joe], [Department, CSE]). Then, keys with the same “Deparment_ID” value will have a secondary sort on the value of the “Student” or “Department” field.
-Output: (1234, Alice, CS) ,(1234, Bob, CS), (1123, Joe, CSE)
+
+Output: 
+(1234, Alice, CS) ,
+(1234, Bob, CS), 
+(1123, Joe, CSE)
+
 Reducer:
+
 This is the step that joining data happening. Since the key with the tag of “1” reached the reducer first, we know that the student “name” is the first value and the “department_name” is the second. Therefore, we don’t need to keep track of any key. We simply loop over the values and concatenate them together
-Input: (1234, Alice, CS) ,(1234, Bob, CS), (1123, Joe, CSE)
-Output: (1123, Joe, CSE),
+
+Input: 
+(1234, Alice, CS) ,
+(1234, Bob, CS), 
+(1123, Joe, CSE)
+
+Output: 
+(1123, Joe, CSE),
 (1234, Bob, CS)
 (1234, Alice, CS)
