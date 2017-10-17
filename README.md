@@ -3,11 +3,11 @@
 Design a MapReduce algorithm that accomplishes the following task: given an unordered collection of two kinds of records, the algorithm will join (combine) record pairs from the collection. In practice, if you need join a lot of data on Hadoop, you would typically higher level tools like Hive and Pig, instead of writing code to perform the joins yourself. Learning how to write the code here will help you gaindeeper understanding of the innerworking of the join operations, and will help you decide what kinds of joins to use under different situations.
 
 **Input of your algorithm**:
->Student, Alice, 1234
->Student, Bob, 1234
->Department, 1123, CSE
->Department, 1234, CS
->Student, Joe, 1123
+>Student, Alice, 1234  
+>Student, Bob, 1234  
+>Department, 1123, CSE  
+>Department, 1234, CS  
+>Student, Joe, 1123  
 
 The input is an unordered collection of records of two types: *Student* and *Department* .
 The *Student* record is of the form *<Student, Name, Department_ID>*
