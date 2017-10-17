@@ -13,9 +13,9 @@ The input is an unordered collection of records of two types: *Student* and *Dep
 The *Student* record is of the form *<Student, Name, Department_ID>*
 The *Department* record is of the form *<Department, Department_ID, Department_Name>*
 **Output of your algorithm**:
->1123, Joe, CSE
-1234, Bob, CS
->1234, Alice, CS
+>1123, Joe, CSE  
+1234, Bob, CS  
+>1234, Alice, CS  
 # Prerequisites
 #### Installing Virtual Machine (VM)
 
@@ -69,20 +69,20 @@ Our first sort with TaggedKey class *Department_ID* is sorted, we have
 Then, keys with the same *Department_ID* value will have a secondary sort on the value of the *Student* or *Department* field.
 
 Output: 
->(1234, Alice, CS) ,
-(1234, Bob, CS), 
->(1123, Joe, CSE)
+>(1234, Alice, CS),  
+(1234, Bob, CS),  
+>(1123, Joe, CSE)  
 
 #### Reducer:
 
 This is the step that joining data happening. Since the key with the tag of “1” reached the reducer first, we know that the student *name* is the first value and the *department_name* is the second. Therefore, we don’t need to keep track of any key. We simply loop over the values and concatenate them together
 
 **Input:** 
->(1234, Alice, CS) ,
-(1234, Bob, CS), 
->(1123, Joe, CSE)
+>(1234, Alice, CS),  
+(1234, Bob, CS),  
+>(1123, Joe, CSE)  
 
 **Output:**
->(1123, Joe, CSE),
-(1234, Bob, CS)
+>(1123, Joe, CSE),  
+(1234, Bob, CS),  
 >(1234, Alice, CS)
